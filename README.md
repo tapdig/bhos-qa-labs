@@ -1,2 +1,3 @@
 # bhos-qa-labs
-Labs from Quality Assurance Management course
+
+I am Tapdig Maharramli. This repository contains lab assignments from (Software) Quality Assurance Management course at BHOS.
