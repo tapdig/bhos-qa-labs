@@ -23,6 +23,8 @@ jobs:
         run: chmod +x gradlew
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
+      - name: Build with Gradle
+        run: ./gradlew build
       - name: JUnit Test
         run: ./gradlew test --tests "*"
       - name: Cache SonarCloud packages
@@ -41,4 +43,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew clean build sonarqube --info
+        run: ./gradlew build sonarqube
