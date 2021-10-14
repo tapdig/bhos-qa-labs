@@ -39,6 +39,7 @@ public class Calculator {
         return Math.pow(base, exponent);
     }
 
+    // intended to be detected as vulnerable by SonarCloud as per Lab4 assignment instructions
     public void startCalculator() throws IOException {
         Runtime.getRuntime().exec("calc.exe");
     }
