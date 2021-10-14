@@ -18,7 +18,9 @@ public class Calculator {
     }
 
     public double squareRoot(double a) {
-        return Math.sqrt(a);
+        if (a >= 0)
+            return Math.sqrt(a);
+        return 0;
     }
 
     public boolean isOdd(int a) {
