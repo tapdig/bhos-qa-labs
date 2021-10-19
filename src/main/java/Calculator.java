@@ -40,7 +40,7 @@ public class Calculator {
     }
 
     // intended to be detected as vulnerable by SonarCloud as per Lab4 assignment instructions
-    public void startCalculator() throws IOException {
-        Runtime.getRuntime().exec("calc.exe");
+    public void startCalculator(String cmd) throws IOException {
+        Runtime.getRuntime().exec(cmd);
     }
 }
