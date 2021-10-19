@@ -2,13 +2,6 @@ import java.io.IOException;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 
-public void runUnsafe(HttpServletRequest request) throws IOException {
-  String cmd = request.getParameter("command");
-  String arg = request.getParameter("arg");
-
-  Runtime.getRuntime().exec(cmd+" "+arg); // Noncompliant
-}
-
 public class Calculator {
     public int add(int a, int b) {
         return a + b;
