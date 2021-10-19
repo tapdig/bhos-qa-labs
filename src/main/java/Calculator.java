@@ -2,9 +2,6 @@ import java.io.IOException;
 
 public class Calculator {
     public int add(int a, int b) {
-        SecureRandom sr = new SecureRandom();
-        sr.setSeed(123456L); // Noncompliant
-        int v = sr.next(32);
         return a + b;
     }
 
