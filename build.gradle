@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id "org.sonarqube" version "3.3"
+    id 'jacoco'
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "tapdig_bhos-qa-labs"
+        property "sonar.organization", "tapdig"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+test.finalizedBy jacocoTestReport
+
+tasks.named('sonarqube').configure {
+    dependsOn test
+}
