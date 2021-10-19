@@ -41,9 +41,6 @@ public class Calculator {
 
     // intended to be detected as vulnerable by SonarCloud as per Lab4 assignment instructions
     public void startCalculator() throws IOException {
-        SecureRandom sr = new SecureRandom();
-        sr.setSeed(123456L); // Noncompliant
-        int v = sr.next(32);
         Runtime.getRuntime().exec("calc.exe");
     }
 }
