@@ -1,4 +1,13 @@
 import java.io.IOException;
+import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+
+public void runUnsafe(HttpServletRequest request) throws IOException {
+  String cmd = request.getParameter("command");
+  String arg = request.getParameter("arg");
+
+  Runtime.getRuntime().exec(cmd+" "+arg); // Noncompliant
+}
 
 public class Calculator {
     public int add(int a, int b) {
@@ -42,5 +51,12 @@ public class Calculator {
     // intended to be detected as vulnerable by SonarCloud as per Lab4 assignment instructions
     public void startCalculator(String cmd) throws IOException {
         Runtime.getRuntime().exec(cmd);
+    }
+    
+    public void runUnsafe(HttpServletRequest request) throws IOException {
+        String cmd = request.getParameter("command");
+        String arg = request.getParameter("arg");
+
+        Runtime.getRuntime().exec(cmd+" "+arg); // Noncompliant
     }
 }
