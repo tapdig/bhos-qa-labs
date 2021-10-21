@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.WebApplicationContext;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -26,34 +27,27 @@ class Springproj1ApplicationTests {
 
     @Autowired
     private WebApplicationContext webApplicationContext;
-    private MockMvc mockMvc;
 
     @BeforeEach
     public void setup() {
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
+        MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
     }
 
     @Test
     public void testSuccessfulResponse() {
-        MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders.get("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos"))
-                .andDo(print()).andExpect(status().isOk())
-                .andReturn();
-        assertNotNull(mvcResult.getResponse());
+        String result = new RestTemplate().getForObject("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos", String.class);
+        assertNotNull(result);
     }
 
     @Test
     public void testSuccessfulResponse2() {
-        MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders.get("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches"))
-                .andDo(print()).andExpect(status().isOk())
-                .andReturn();
-        assertNotNull(mvcResult.getResponse());
+        String result = new RestTemplate().getForObject("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches", String.class);
+        assertNotNull(result);
     }
 
     @Test
     public void testSuccessfulResponse3() {
-        MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders.get("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches/1/commits"))
-                .andDo(print()).andExpect(status().isOk())
-                .andReturn();
-        assertNotNull(mvcResult.getResponse());
+        String result = new RestTemplate().getForObject("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches/1/commits", String.class);
+        assertNotNull(result);
     }
 }
