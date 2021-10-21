@@ -45,36 +45,30 @@ class Springproj1ApplicationTests {
         return true;
     }
 
-    @DisplayName("Integration Test for the first endpoint")
-    @Test
-    public void testSuccessfulResponseRepos() {
+    public void integrationTest(String url) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.getForEntity("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos", String.class);
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 
         assertThat(response).isNotNull();
         assertTrue(isResponseJSON(response.getBody()));
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    @DisplayName("Integration Test for the first endpoint")
+    @Test
+    public void testSuccessfulResponseRepos() {
+        integrationTest("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos");
     }
 
     @DisplayName("Integration Test for the second endpoint")
     @Test
     public void testSuccessfulResponseBranches() {
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.getForEntity("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches", String.class);
-
-        assertThat(response).isNotNull();
-        assertTrue(isResponseJSON(response.getBody()));
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        integrationTest("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches");
     }
 
     @DisplayName("Integration Test for the third endpoint")
     @Test
     public void testSuccessfulResponseCommits() {
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.getForEntity("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches/1/commits", String.class);
-
-        assertThat(response).isNotNull();
-        assertTrue(isResponseJSON(response.getBody()));
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        integrationTest("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches/1/commits");
     }
 }
