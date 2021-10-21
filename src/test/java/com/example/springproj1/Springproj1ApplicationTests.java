@@ -1,6 +1,7 @@
 package com.example.springproj1;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,20 +28,23 @@ class Springproj1ApplicationTests {
         MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
     }
 
+    @DisplayName("Integration Test for the first endpoint")
     @Test
-    public void testSuccessfulResponse() {
+    public void testSuccessfulResponseRepos() {
         String result = new RestTemplate().getForObject("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos", String.class);
         assertNotNull(result);
     }
 
+    @DisplayName("Integration Test for the second endpoint")
     @Test
-    public void testSuccessfulResponse2() {
+    public void testSuccessfulResponseBranches() {
         String result = new RestTemplate().getForObject("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches", String.class);
         assertNotNull(result);
     }
 
+    @DisplayName("Integration Test for the third endpoint")
     @Test
-    public void testSuccessfulResponse3() {
+    public void testSuccessfulResponseCommits() {
         String result = new RestTemplate().getForObject("https://60a21d3f745cd70017576092.mockapi.io/api/v1/repos/1/branches/1/commits", String.class);
         assertNotNull(result);
     }
