@@ -1,5 +1,6 @@
 package com.example.springproj1;
 
+import org.json.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,6 +19,19 @@ import static org.junit.jupiter.api.Assertions.*;
 @WebAppConfiguration
 class Springproj1ApplicationTests {
 
+    public boolean isResponseJSONValid(String response) {
+        try {
+            new JSONObject(response);
+        } catch (JSONException e) {
+            try {
+                new JSONArray(response);
+            } catch (JSONException ex) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void integrationTest(String url) {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
@@ -25,6 +39,7 @@ class Springproj1ApplicationTests {
         assertNotNull(response);
         assertTrue(response.getStatusCode() == HttpStatus.OK);
         assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
+        assertTrue(isResponseJSONValid(response.getBody()));
     }
 
     @DisplayName("Integration Test for the first endpoint")
