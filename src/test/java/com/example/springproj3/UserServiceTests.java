@@ -21,7 +21,6 @@ class UserServiceTests {
     public void testUserInsertion() throws ExecutionException, InterruptedException {
 
         User testUser = new User("Tapdig", "Maharramli", 20);
-
         UserService.addUser(testUser);
 
         User receivedUser = UserService.readUser("TapdigMaharramli");
