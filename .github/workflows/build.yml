@@ -17,7 +17,7 @@ jobs:
           java-version: '16'
           distribution: 'adopt'
           cache: gradle
-      - name: Decode firebase.json
+      - name: firebase.json private key
         env:
           FIREBASE_SECRET: ${{ secrets.FIREBASE_SECRET }}
         run: echo $FIREBASE_SECRET > ./firebase.json
