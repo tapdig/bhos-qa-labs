@@ -95,6 +95,6 @@ class Springproj4ApplicationTests {
     @Test
     @DisplayName("Integration Test for NYTimes Books API")
     public void testSuccessfulResponse() throws JSONException {
-        integrationTest("https://api.nytimes.com/svc/books/v3/lists.json?list=combined-print-and-e-book-nonfiction&api-key=zGVDDqR37EHl4F3ykkAD6U5dbUgnddlP");
+        integrationTest("https://api.nytimes.com/svc/books/v3/lists.json?list=combined-print-and-e-book-nonfiction&api-key=" + env.getProperty("API_KEY_NYTimes"));
     }
 }
