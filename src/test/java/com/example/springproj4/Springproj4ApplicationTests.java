@@ -6,14 +6,16 @@ import org.json.JSONObject;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -24,9 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @ExtendWith(SpringExtension.class)
 @WebAppConfiguration
 class Springproj4ApplicationTests {
-
-    @Autowired
-    private Environment env;
 
     public static boolean isConsecutive(int[] A) {
         if (A.length <= 1) {
@@ -56,7 +55,7 @@ class Springproj4ApplicationTests {
         return true;
     }
 
-    public void integrationTest(String url) throws JSONException {
+    public void integrationTest(String url) throws JSONException, FileNotFoundException {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 
@@ -87,14 +86,16 @@ class Springproj4ApplicationTests {
 
         boolean result = (nonEmptyTitle && completeRanking);
 
-        System.out.println(env.getProperty("API_KEY_NYTimes"));
-
         assertTrue(result);
     }
 
     @Test
     @DisplayName("Integration Test for NYTimes Books API")
-    public void testSuccessfulResponse() throws JSONException {
-        integrationTest("https://api.nytimes.com/svc/books/v3/lists.json?list=combined-print-and-e-book-nonfiction&api-key=" + env.getProperty("API_KEY_NYTimes"));
+    public void testSuccessfulResponse() throws JSONException, IOException {
+        String json = new String(Files.readAllBytes(Paths.get("./api_key.json")));
+        JSONObject key = new JSONObject(json);
+        String apiKey = key.getString("API_KEY_NYTimes");
+
+        integrationTest("https://api.nytimes.com/svc/books/v3/lists.json?list=combined-print-and-e-book-nonfiction&api-key=" + apiKey);
     }
 }

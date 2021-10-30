@@ -20,7 +20,7 @@ jobs:
       - name: NYTimes API KEY
         env:
           API_KEY_NYTimes: ${{ secrets.API_KEY_NYTimes }}
-        run: echo API_KEY_NYTimes=$API_KEY_NYTimes > .env; export API_KEY_NYTimes=$API_KEY_NYTimes
+        run: echo $API_KEY_NYTimes > api_key.json
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Validate Gradle wrapper
