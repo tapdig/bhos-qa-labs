@@ -70,13 +70,13 @@ class Springproj4ApplicationTests {
             JSONArray bookDetails = book.getJSONArray("book_details");
             JSONObject details = (JSONObject) bookDetails.get(0);
 
-            int rank = (int) book.get("rank");
             String title = details.getString("title");
+            if (title.isEmpty()) {
+                nonEmptyTitle = false;
+                break;
+            }
 
-            // System.out.println(rank + ". " + title);
-
-            nonEmptyTitle = !title.isEmpty();
-
+            int rank = (int) book.get("rank");
             ranks = Arrays.copyOf(ranks, ranks.length + 1);
             ranks[ranks.length-1] = rank;
         }
