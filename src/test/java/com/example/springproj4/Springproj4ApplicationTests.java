@@ -55,7 +55,7 @@ class Springproj4ApplicationTests {
         return true;
     }
 
-    public void integrationTest(String url) throws JSONException, FileNotFoundException {
+    public void integrationTest(String url) throws JSONException {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
 
@@ -74,7 +74,7 @@ class Springproj4ApplicationTests {
             int rank = (int) book.get("rank");
             String title = details.getString("title");
 
-            System.out.println(rank + ". " + title);
+            // System.out.println(rank + ". " + title);
 
             nonEmptyTitle = !title.isEmpty();
 
@@ -83,7 +83,6 @@ class Springproj4ApplicationTests {
         }
 
         boolean completeRanking = isConsecutive(ranks);
-
         boolean result = (nonEmptyTitle && completeRanking);
 
         assertTrue(result);
