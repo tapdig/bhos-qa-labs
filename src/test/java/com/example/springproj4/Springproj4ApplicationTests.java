@@ -15,9 +15,7 @@ import org.springframework.web.client.RestTemplate;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -25,34 +23,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @ExtendWith(SpringExtension.class)
 @WebAppConfiguration
 class Springproj4ApplicationTests {
-
-    public static boolean isConsecutive(int[] A) {
-        if (A.length <= 1) {
-            return true;
-        }
-
-        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
-
-        for (int i: A) {
-            if (i < min) { min = i; }
-            if (i > max) { max = i; }
-        }
-
-        if (max - min != A.length - 1) {
-            return false;
-        }
-
-        Set<Integer> visited = new HashSet<>();
-
-        for (int i: A) {
-            if (visited.contains(i)) {
-                return false;
-            }
-            visited.add(i);
-        }
-
-        return true;
-    }
 
     public void integrationTest(String url) throws JSONException {
         RestTemplate restTemplate = new RestTemplate();
@@ -63,7 +33,8 @@ class Springproj4ApplicationTests {
 
         boolean nonEmptyTitle = true;
 
-        int[] ranks = {};
+        ArrayList<Integer> ranks = new ArrayList<Integer>();
+        ArrayList<Integer> ranksArray = new ArrayList<Integer>();
 
         for (int i=0; i<books.length(); i++) {
             JSONObject book = (JSONObject) books.get(i);
@@ -77,13 +48,21 @@ class Springproj4ApplicationTests {
             }
 
             int rank = (int) book.get("rank");
-            ranks = Arrays.copyOf(ranks, ranks.length + 1);
-            ranks[ranks.length-1] = rank;
+            ranks.add(rank);
+            ranksArray.add(i+1);
         }
 
-        boolean completeRanking = isConsecutive(ranks);
-        boolean result = (nonEmptyTitle && completeRanking);
+        Collections.sort(ranks);
+        boolean completeRanking = true;
 
+        for (int i=0; i < ranks.size(); i++) {
+            if (ranks.get(i) != ranksArray.get(i)) {
+                completeRanking = false;
+                break;
+            }
+        }
+
+        boolean result = nonEmptyTitle && completeRanking;
         assertTrue(result);
     }
 
