@@ -17,11 +17,7 @@ jobs:
           java-version: '16'
           distribution: 'adopt'
           cache: gradle
-      - name: serviceAccountKey private key
-        env:
-          FIREBASE_SECRET: ${{ secrets.FIREBASE_SECRET }}
-        run: echo $FIREBASE_SECRET > ./serviceAccountKey.json
-      - name: serviceAccountKey private key
+      - name: Firebase secrets
         env:
           FIREBASE_AND_FIRESTORE_SECRETS: ${{ secrets.FIREBASE_AND_FIRESTORE_SECRETS }}
         run: echo $FIREBASE_AND_FIRESTORE_SECRETS > ./firebase.json
@@ -31,5 +27,5 @@ jobs:
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
       - name: Build with Gradle
         run: ./gradlew build
-      - name: Integration Tests
+      - name: End-To-End Tests
         run: ./gradlew test
