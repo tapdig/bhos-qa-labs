@@ -1,0 +1,143 @@
+﻿sep=,
+"ID","Title","Assigned To","Automation Type","Case ID","Comment","Defects","Elapsed","Estimate","Expected Result","Forecast","Goals","In Progress","Mission","Plan","Plan ID","Preconditions","Priority","References","Run","Run Configuration","Run ID","Section","Section Depth","Section Description","Section Hierarchy","Status","Steps","Steps","Steps","Steps (Actual Result)","Steps (Additional Info)","Steps (Expected Result)","Steps (Expected Result)","Steps (References)","Steps (Shared step ID)","Steps (Status)","Steps (Step)","Steps (Step)","Template","Tested By","Tested On","Type","Version"
+"T1","Register as ""ABB Customer"" with FIN number","Tapdig Maharramli"," None","C3","","","","","An SMS message should be sent from ABB about successful registration and user should be navigated to ""Home"" page","","","","","","","ABB Mobile Android application installed on the Android device","Critical","","Test Run 12/19/2021","","R1","Registration","0","","Registration","Passed","1. Enter FIN number
+2. Press Continue
+3. Enter your mobile number
+4. Press Continue
+5. Enter verification code (6-digit code with an expiration date of 2 minutes)
+6. Press Continue
+7. Set up PIN code (4-digit PIN code)
+8. Confirm PIN code","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:16 PM","Acceptance",""
+"T1","Register as ""ABB Customer"" with FIN number","Tapdig Maharramli"," None","C3","","","","","An SMS message should be sent from ABB about successful registration and user should be navigated to ""Home"" page","","","","","","","ABB Mobile Android application installed on the Android device","Critical","","Test Run 12/19/2021","","R1","Registration","0","","Registration","Untested","1. Enter FIN number
+2. Press Continue
+3. Enter your mobile number
+4. Press Continue
+5. Enter verification code (6-digit code with an expiration date of 2 minutes)
+6. Press Continue
+7. Set up PIN code (4-digit PIN code)
+8. Confirm PIN code","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Acceptance",""
+"T5","Register as ""ABB Customer"" with Card number","Tapdig Maharramli"," None","C7","","","","","An SMS should be sent by ABB to the registered mobile number mentioning successful registration to the application and user should be navigated to ""Home"" page of the application","","","","","","","ABB Mobile Android application","Critical","","Test Run 12/19/2021","","R1","Registration","0","","Registration","Passed","1. Enter 16-digit card number
+2. Press Continue
+3. Enter your mobile number
+4. Press Continue
+5. Enter verification code (6-digit code sent by ABB with an expiration of 2 minutes)
+6. Press Continue
+7. Set up PIN code (4-digit code)
+8. Confirm PIN code
+
+","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:16 PM","Acceptance",""
+"T5","Register as ""ABB Customer"" with Card number","Tapdig Maharramli"," None","C7","","","","","An SMS should be sent by ABB to the registered mobile number mentioning successful registration to the application and user should be navigated to ""Home"" page of the application","","","","","","","ABB Mobile Android application","Critical","","Test Run 12/19/2021","","R1","Registration","0","","Registration","Untested","1. Enter 16-digit card number
+2. Press Continue
+3. Enter your mobile number
+4. Press Continue
+5. Enter verification code (6-digit code sent by ABB with an expiration of 2 minutes)
+6. Press Continue
+7. Set up PIN code (4-digit code)
+8. Confirm PIN code
+
+","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Acceptance",""
+"T2","Register as ""Not an ABB Customer""","Tapdig Maharramli"," None","C4","","","","","An SMS message should be sent from ABB to the registered mobile number about successful registration and user should be navigated to ""Home"" page","","","","","","","ABB Mobile Android application installed on an Android device","High","","Test Run 12/19/2021","","R1","Registration","0","","Registration","Passed","1. Enter FIN number
+2. Press Continue
+3. Enter your date of birth
+4. Press Continue
+5. Enter your mobile number
+6. Press Continue
+7. Enter verification code (6-digit code with an expiration date of 2 minutes)
+8. Press Continue
+9. Set up PIN code (4-digit code for quick access to your bank account)
+10. Confirm PIN code","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:16 PM","Acceptance",""
+"T2","Register as ""Not an ABB Customer""","Tapdig Maharramli"," None","C4","","","","","An SMS message should be sent from ABB to the registered mobile number about successful registration and user should be navigated to ""Home"" page","","","","","","","ABB Mobile Android application installed on an Android device","High","","Test Run 12/19/2021","","R1","Registration","0","","Registration","Untested","1. Enter FIN number
+2. Press Continue
+3. Enter your date of birth
+4. Press Continue
+5. Enter your mobile number
+6. Press Continue
+7. Enter verification code (6-digit code with an expiration date of 2 minutes)
+8. Press Continue
+9. Set up PIN code (4-digit code for quick access to your bank account)
+10. Confirm PIN code","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Acceptance",""
+"T3","Correct OTP","Tapdig Maharramli"," None","C5","","","","","User should be navigated to the next page","","","","","","","ABB Mobile Android application","High","","Test Run 12/19/2021","","R1","OTP Process","0","","OTP Process","Passed","1. Enter 6-digit code sent by ABB with an expiration date of 2 minutes
+2. Enter the code within 2 minutes and press ""Continue""","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:16 PM","Other",""
+"T3","Correct OTP","Tapdig Maharramli"," None","C5","","","","","User should be navigated to the next page","","","","","","","ABB Mobile Android application","High","","Test Run 12/19/2021","","R1","OTP Process","0","","OTP Process","Untested","1. Enter 6-digit code sent by ABB with an expiration date of 2 minutes
+2. Enter the code within 2 minutes and press ""Continue""","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Other",""
+"T4","Wrong OTP","Tapdig Maharramli"," None","C6","","","","","After 3 wrong tries, user should be alerted ""Invalid OTP"". ""You exceed the invalid OTP attempt. Please register again"". Finally, user should be navigated to the registration page when the application opens.","","","","","","","ABB Mobile Android application","Medium","","Test Run 12/19/2021","","R1","OTP Process","0","","OTP Process","Passed","1. Enter wrong code on the first try
+2. Press Dismiss on popup alert
+3. Enter wrong code on the second try
+4. Press Dismiss on popup alert
+5. Enter wrong code on the third try
+6. Press Dismiss on popup alert
+
+","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:16 PM","Other",""
+"T4","Wrong OTP","Tapdig Maharramli"," None","C6","","","","","After 3 wrong tries, user should be alerted ""Invalid OTP"". ""You exceed the invalid OTP attempt. Please register again"". Finally, user should be navigated to the registration page when the application opens.","","","","","","","ABB Mobile Android application","Medium","","Test Run 12/19/2021","","R1","OTP Process","0","","OTP Process","Retest","1. Enter wrong code on the first try
+2. Press Dismiss on popup alert
+3. Enter wrong code on the second try
+4. Press Dismiss on popup alert
+5. Enter wrong code on the third try
+6. Press Dismiss on popup alert
+
+","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:16 PM","Other",""
+"T4","Wrong OTP","Tapdig Maharramli"," None","C6","","","","","After 3 wrong tries, user should be alerted ""Invalid OTP"". ""You exceed the invalid OTP attempt. Please register again"". Finally, user should be navigated to the registration page when the application opens.","","","","","","","ABB Mobile Android application","Medium","","Test Run 12/19/2021","","R1","OTP Process","0","","OTP Process","Passed","1. Enter wrong code on the first try
+2. Press Dismiss on popup alert
+3. Enter wrong code on the second try
+4. Press Dismiss on popup alert
+5. Enter wrong code on the third try
+6. Press Dismiss on popup alert
+
+","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:16 PM","Other",""
+"T4","Wrong OTP","Tapdig Maharramli"," None","C6","","","","","After 3 wrong tries, user should be alerted ""Invalid OTP"". ""You exceed the invalid OTP attempt. Please register again"". Finally, user should be navigated to the registration page when the application opens.","","","","","","","ABB Mobile Android application","Medium","","Test Run 12/19/2021","","R1","OTP Process","0","","OTP Process","Untested","1. Enter wrong code on the first try
+2. Press Dismiss on popup alert
+3. Enter wrong code on the second try
+4. Press Dismiss on popup alert
+5. Enter wrong code on the third try
+6. Press Dismiss on popup alert
+
+","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Other",""
+"T6","Login by ""Continue as {Name}""","Tapdig Maharramli"," None","C8","","","","","User should login successfully and navigated to ""Home"" page","","","","","","","User {Name} should be registered and not removed from the device","High","","Test Run 12/19/2021","","R1","Login","0","","Login","Passed","1. Click ""Continue as {Name}""
+2. Enter your PIN code (4-digit code)
+","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:17 PM","Other",""
+"T6","Login by ""Continue as {Name}""","Tapdig Maharramli"," None","C8","","","","","User should login successfully and navigated to ""Home"" page","","","","","","","User {Name} should be registered and not removed from the device","High","","Test Run 12/19/2021","","R1","Login","0","","Login","Untested","1. Click ""Continue as {Name}""
+2. Enter your PIN code (4-digit code)
+","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Other",""
+"T7","Login by ""Enter as another user""","Tapdig Maharramli"," None","C9","","","","","User should be navigated to the registration","","","","","","","","Medium","","Test Run 12/19/2021","","R1","Login","0","","Login","Passed","1. Click ""Enter as another user""
+2. Click either ""ABB Customer"" or ""Not an ABB Customer""
+3. Continue the previous registration process tested","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:21 PM","Other",""
+"T7","Login by ""Enter as another user""","Tapdig Maharramli"," None","C9","","","","","User should be navigated to the registration","","","","","","","","Medium","","Test Run 12/19/2021","","R1","Login","0","","Login","Untested","1. Click ""Enter as another user""
+2. Click either ""ABB Customer"" or ""Not an ABB Customer""
+3. Continue the previous registration process tested","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Other",""
+"T9","Change Account Password","Tapdig Maharramli"," None","C11","There is not any password set up on the registration, only PIN code exists which is used as both an application access code and PIN code for the registered user","","","","Account password should be changed to the new one","","","","","","","Registered user account on the ABB Mobile Android application","Medium","","Test Run 12/19/2021","","R1","Password Change","0","","Password Change","Blocked","Change the password of the account","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:18 PM","Other",""
+"T9","Change Account Password","Tapdig Maharramli"," None","C11","","","","","Account password should be changed to the new one","","","","","","","Registered user account on the ABB Mobile Android application","Medium","","Test Run 12/19/2021","","R1","Password Change","0","","Password Change","Blocked","Change the password of the account","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:17 PM","Other",""
+"T9","Change Account Password","Tapdig Maharramli"," None","C11","","","","","Account password should be changed to the new one","","","","","","","Registered user account on the ABB Mobile Android application","Medium","","Test Run 12/19/2021","","R1","Password Change","0","","Password Change","Untested","Change the password of the account","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Other",""
+"T10","Change PIN (access code of the application)","Tapdig Maharramli"," None","C12","PIN (access code of application) can only be reset on the login, not changed in the application","","","","PIN (access code of the application) should be changed successfully","","","","","","","","Medium","","Test Run 12/19/2021","","R1","PIN (access code of application) Change","0","","PIN (access code of application) Change","Blocked","Change PIN (access code of the application)","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:19 PM","Other",""
+"T10","Change PIN (access code of the application)","Tapdig Maharramli"," None","C12","","","","","PIN (access code of the application) should be changed successfully","","","","","","","","Medium","","Test Run 12/19/2021","","R1","PIN (access code of application) Change","0","","PIN (access code of application) Change","Untested","Change PIN (access code of the application)","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Other",""
+"T11","Reset PIN code","Tapdig Maharramli"," None","C13","","","","","PIN code should successfully be reset","","","","","","","Registered (existing) user account","Medium","","Test Run 12/19/2021","","R1","PIN Reset","0","","PIN Reset","Passed","1. Click ""Forgot PIN code?"" on the page when the application opens
+2. Enter FIN number or Card number
+3. Enter your mobile number
+4. Enter verification code (6-digit OTP code)
+5. Set up PIN code
+6. Confirm PIN code ","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:19 PM","Other",""
+"T11","Reset PIN code","Tapdig Maharramli"," None","C13","","","","","PIN code should successfully be reset","","","","","","","Registered (existing) user account","Medium","","Test Run 12/19/2021","","R1","PIN Reset","0","","PIN Reset","Untested","1. Click ""Forgot PIN code?"" on the page when the application opens
+2. Enter FIN number or Card number
+3. Enter your mobile number
+4. Enter verification code (6-digit OTP code)
+5. Set up PIN code
+6. Confirm PIN code ","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Other",""
+"T8","Payment to Mobile Operator","Tapdig Maharramli"," None","C10","","","","","Page should display ""Payment successfully completed!"" with payment details","","","","","","","Registered and Logged in user account on the ABB Mobile Android application","Medium","","Test Run 12/19/2021","","R1","Payment to Mobile Operator","0","","Payment to Mobile Operator","Passed","1. Click ""+"" at the middle bottom of the ""Home"" page
+2. Click ""Pay"" from Actions
+3. Select ""Mobile"" from available options
+4. Select {Mobile Operator} from the list
+5. Enter phone number
+6. Press ""Continue""
+7. Enter amount between 1.0 - 200.0 AZN
+8. Select card from ""With Card"" list
+9. Click ""Pay""
+10. Click ""Confirm""","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:19 PM","Other",""
+"T8","Payment to Mobile Operator","Tapdig Maharramli"," None","C10","","","","","Page should display ""Payment successfully completed!"" with payment details","","","","","","","Registered and Logged in user account on the ABB Mobile Android application","Medium","","Test Run 12/19/2021","","R1","Payment to Mobile Operator","0","","Payment to Mobile Operator","Untested","1. Click ""+"" at the middle bottom of the ""Home"" page
+2. Click ""Pay"" from Actions
+3. Select ""Mobile"" from available options
+4. Select {Mobile Operator} from the list
+5. Enter phone number
+6. Press ""Continue""
+7. Enter amount between 1.0 - 200.0 AZN
+8. Select card from ""With Card"" list
+9. Click ""Pay""
+10. Click ""Confirm""","","","","","","","","","","","","Test Case (Text)","Tapdig Maharramli","12/19/2021 2:15 PM","Other",""
